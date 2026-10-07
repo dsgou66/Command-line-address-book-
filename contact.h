@@ -29,3 +29,5 @@ int          clist_update(ContactList* list, int id,
 Contact*     clist_find_by_id(ContactList* list, int id);
 Contact*     clist_find_by_name(ContactList* list, const char* name);
 void         clist_print_all(const ContactList* list);
+int clist_save(const ContactList* list, const char* path);
+int clist_load(ContactList* list, const char* path);

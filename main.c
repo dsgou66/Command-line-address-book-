@@ -24,6 +24,7 @@ int main(void) {
     printf("列表创建失败");
     return 1;
   }
+  clist_load(list, "contacts.dat");
   while (1) {
     printf("\n=====通讯录=====\n");
     printf("1.显示所有\n");
@@ -123,8 +124,10 @@ case 4:
               }
               break;
               case 0:
-                  printf("exit");
-                  return 0;
+    clist_save(list, "contacts.dat");
+    clist_destroy(list);
+    printf("已保存，退出\n");
+    return 0;
     }
   }
 }
